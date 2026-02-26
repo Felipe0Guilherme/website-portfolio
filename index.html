@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Felipe Guilherme - Programador Júnior | Portfolio Criativo</title>
+    <link rel="stylesheet" href="style.css">
+  
+    <script src="https://unpkg.com/lucide@latest"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <link rel="icon" href="assets/Icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+  
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Alternar tema">
+        <i data-lucide="moon"></i>
+    </button>
+
+
+    <div class="particles" id="particles"></div>
+
+ 
+    <header class="header-glass">
+        <div class="header-container">
+            <div class="logo">
+                
+                <div class="logo-text">
+                    <h1 class="logo-name">Felipe Guilherme</h1>
+                    <span class="logo-subtitle">Full Stack Developer Jr</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="mailto:Felipeguilherma@gmail.com" class="email-badge">
+                    <i data-lucide="mail"></i>
+                    <span class="email-text">Felipeguilherma@gmail.com</span>
+                </a>
+                <div class="social-header">
+                    <a href="https://www.linkedin.com/in/felipe-guilherme-6a0476302/" target="_blank" class="social-icon" title="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/5511966114346" target="_blank" class="social-icon" title="WhatsApp">
+                        <i data-lucide="message-circle"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nick_sonim/" target="_blank" class="social-icon" title="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>Disponível para novos projetos</span>
+                </div>
+                <h2 class="hero-title">
+                    Olá, eu sou <span class="gradient-text">Felipe Guilherme</span>
+                </h2>
+                <div class="typing-container">
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Desenvolvedor júnior apaixonado por criar experiências digitais incríveis. 
+                    Focado em transformar ideias em realidade através de código limpo e design moderno.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Entre em Contato</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <span>Ver Projetos</span>
+                        <i data-lucide="eye"></i>
+                    </a>
+                </div>
+                <div class="scroll-indicator">
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </section>
+
+        <!-- Sobre -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Conheça-me</span>
+                    <h2 class="section-title">Sobre Mim</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-img-container">
+                        <div class="about-img-wrapper">
+                            <img src="assets/image-photo.png" alt="Felipe Guilherme" class="about-img">
+                         <div class="about-img-overlay">
+                                <div class="about-stats">
+                                    <div class="stat">
+                                        <i data-lucide="code"></i>
+                                        <span class="stat-number">10+</span>
+                                        <span class="stat-label">Projetos em ação</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i data-lucide="award"></i>
+                                        <span class="stat-number">100%</span>
+                                        <span class="stat-label">Dedicação</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div10
+                        <div class="about-decoration">
+                            <div class="deco-circle"></div>
+                            <div class="deco-dots"></div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3 class="about-subtitle">Desenvolvedor em constante evolução</h3>
+                        <p class="about-description">
+                            Meu nome é <strong>Felipe Guilherme</strong>, sou programador júnior com foco em 
+                            <span class="highlight">HTML, CSS, JavaScript e React</span>, formado em Gestão da Tecnologia da Informação.
+                        </p>
+                        <p class="about-description">
+                            Minha jornada começou no setor de sistemas 3D, onde tive contato com processos digitais 
+                            que despertaram minha paixão pela programação. Desde então, venho me dedicando ao 
+                            estudo de tecnologias como <span class="highlight">Python, SQL e frameworks modernos</span>.
+                        </p>
+                        <p class="about-description">
+                            Sou autodidata, aprendo rápido e valorizo o trabalho em equipe e a responsabilidade. 
+                            Possuo <span class="highlight">inglês intermediário</span> e estou sempre em busca de novos desafios que me ajudem a evoluir como profissional.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature">
+                                <i data-lucide="rocket"></i>
+                                <div>
+                                    <h4>Aprendizado Rápido</h4>
+                                    <p>Capacidade de absorver novos conhecimentos</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i data-lucide="users"></i>
+                                <div>
+                                    <h4>Trabalho em Equipe</h4>
+                                    <p>Colaboração e comunicação efetiva</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i data-lucide="target"></i>
+                                <div>
+                                    <h4>Foco em Resultados</h4>
+                                    <p>Comprometimento com a qualidade</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">O que eu sei</span>
+                    <h2 class="section-title">Minhas Habilidades</h2>
+                    <p class="section-description">Tecnologias e ferramentas que domino para criar soluções incríveis</p>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-card" data-skill="html">
+                        <div class="skill-icon">
+                            <i data-lucide="file-code"></i>
+                        </div>
+                        <h3>HTML5</h3>
+                        <p>Estruturas semânticas e acessíveis</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="css">
+                        <div class="skill-icon">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h3>CSS3</h3>
+                        <p>Design responsivo e moderno</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="js">
+                        <div class="skill-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>Interatividade e lógica</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="react">
+                        <div class="skill-icon">
+                            <i data-lucide="component"></i>
+                        </div>
+                        <h3>React</h3>
+                        <p>Componentes e hooks</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="python">
+                        <div class="skill-icon">
+                            <i data-lucide="terminal"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p>Scripts e automação</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="sql">
+                        <div class="skill-icon">
+                            <i data-lucide="database"></i>
+                        </div>
+                        <h3>SQL</h3>
+                        <p>Banco de dados</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Meu trabalho</span>
+                    <h2 class="section-title">Projetos Recentes</h2>
+                    <p class="section-description">Alguns dos projetos que estou treinando e desenvolvendo</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1770734360042-676ef707d022?w=800" alt="landing page" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://felipe-alfa.github.io/Landing-_page_Roberto/" class="project-link">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Felipe-alfa/Landing-_page_Roberto" class="project-link">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Css3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <h3>Landing page</h3>
+                            <p>Landing page atrativa e funcional, desenvolvida para captar leads, apresentar sua proposta de valor e maximizar resultados.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1575388902449-6bca946ad549?w=800" alt="portifolios interativos" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://support.google.com/webmasters/answer/2445990?hl=pt-BR" class="project-link">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Felipe-alfa?tab=repositories" class="project-link">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML</span>
+                            </div>
+                            <h3>Portfólios interativos</h3>
+                            <p>Portfólio digital interativo, com layout moderno e navegação fluida para destacar habilidades e projetos.</p>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Por que me contratar -->
+        <section class="why-me">
+            <div class="container">
+                <div class="why-me-content">
+                    <div class="why-me-text">
+                        <span class="section-tag light">Diferenciais</span>
+                        <h2 class="section-title light">Por Que Me Contratar?</h2>
+                        <p class="why-me-description">
+                            Trago uma combinação única de habilidades técnicas, paixão por aprender 
+                            e compromisso com resultados de qualidade.
+                        </p>
+                    </div>
+                    <div class="reasons-grid">
+                        <div class="reason-card">
+                            <div class="reason-icon">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h3>Aprendizado Rápido</h3>
+                            <p>Capacidade de absorver novas tecnologias e metodologias rapidamente</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-icon">
+                                <i data-lucide="sparkles"></i>
+                            </div>
+                            <h3>Dedicação Total</h3>
+                            <p>Comprometimento e paixão em cada linha de código</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-icon">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <h3>Inglês Técnico</h3>
+                            <p>Fluência para documentação e comunicação internacional</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-icon">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <h3>Trabalho em Equipe</h3>
+                            <p>Colaboração efetiva e comunicação clara</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h3>Evolução Constante</h3>
+                            <p>Sempre buscando melhorar e inovar</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-icon">
+                                <i data-lucide="check-circle"></i>
+                            </div>
+                            <h3>Responsabilidade</h3>
+                            <p>Cumprimento de prazos e compromissos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Entre em contato</span>
+                    <h2 class="section-title">Vamos Trabalhar Juntos?</h2>
+                    <p class="section-description">Estou disponível para novos projetos e oportunidades. Vamos conversar!</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <a href="mailto:Felipeguilherma@gmail.com">Felipeguilherma@gmail.com</a>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/5511966114346">(11) 96611-4346</a>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <h3>Localização</h3>
+                            <p>São Paulo, Brasil</p>
+                        </div>
+                        <div class="contact-social">
+                            <h3>Redes Sociais</h3>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/felipe-guilherme-6a0476302/" target="_blank" class="social-link">
+                                    <i data-lucide="linkedin"></i>
+                                </a>
+                                <a href="https://wa.me/5511966114346" target="_blank" class="social-link">
+                                    <i data-lucide="message-circle"></i>
+                                </a>
+                                <a href="https://www.instagram.com/nick_sonim/" target="_blank" class="social-link">
+                                    <i data-lucide="instagram"></i>
+                                </a>
+                                <a href="https://github.com/Felipe-alfa" target="_blank" class="social-link">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">
+                                        <i data-lucide="user"></i>
+                                        Nome Completo
+                                    </label>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        <i data-lucide="mail"></i>
+                                        Email
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">
+                                    <i data-lucide="briefcase"></i>
+                                    Tipo de Serviço
+                                </label>
+                                <select id="service" name="service" class="form-control">
+                                    <option value="landing-page">Landing Page</option>
+                                    <option value="website">Website Completo</option>
+                                    <option value="webapp">Aplicação Web</option>
+                                    <option value="other">Outro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">
+                                    <i data-lucide="message-square"></i>
+                                    Mensagem
+                                </label>
+                                <textarea id="message" name="message" class="form-control" rows="5" placeholder="Descreva seu projeto..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                                <span>Enviar Mensagem</span>
+                                <i data-lucide="send"></i>
+                            </button>
+                            <div class="form-status" id="formStatus"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-text">
+                            <h3 class="logo-name">Felipe Guilherme</h3>
+                            <span class="logo-subtitle">Full Stack Developer Jr</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Desenvolvendo soluções digitais com paixão e dedicação.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li>
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:Felipeguilherma@gmail.com">Felipeguilherma@gmail.com</a>
+                        </li>
+                        <li>
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+5511966114346">(11) 96611-4346</a>
+                        </li>
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <span>São Paulo, Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/felipe-guilherme-6a0476302/" target="_blank" title="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/5511966114346" target="_blank" title="WhatsApp">
+                            <i data-lucide="message-circle"></i>
+                        </a>
+                        <a href="https://www.instagram.com/nick_sonim/" target="_blank" title="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="https://github.com/Felipe-alfa" target="_blank" title="GitHub">
+                            <i data-lucide="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Felipe Guilherme. Todos os direitos reservados.</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
