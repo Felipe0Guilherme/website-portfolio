@@ -274,10 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(confettiStyle);
 
-    // ===========================
-    // PARALLAX & HEADER SCROLL
-    // ===========================
-    
+ 
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         
@@ -300,10 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===========================
-    // INIT LUCIDE
-    // ===========================
-    
+  
     if(typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
