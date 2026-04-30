@@ -1280,7 +1280,6 @@ blockquote {
     background-clip: text;
 }
 
-/* Override the hover background that was set for all social-link:hover */
 .social-link:hover {
     background: var(--bg-hover) !important;
     border-color: var(--border-h) !important;
