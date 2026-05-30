@@ -1,3 +1,4 @@
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
@@ -148,6 +149,17 @@ nav.nav { display: flex; gap: 0; margin-left: auto; }
 /* Content */
 .hero-content {
   position: relative; z-index: 3; max-width: 760px; width: 100%; text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.35rem 1.1rem; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+  font-size: 0.8rem; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 1.75rem;
+  animation: fadeUp .9s cubic-bezier(.25,.4,.25,1) .3s both;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: rgba(244,63,94,0.9);
+  flex-shrink: 0; animation: pulse-dot 2s infinite;
 }
 @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
 

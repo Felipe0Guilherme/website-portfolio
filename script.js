@@ -280,7 +280,7 @@ if (typeof lucide !== 'undefined') lucide.createIcons();
   const REPULSE_RADIUS  = 120;  // pixels — how far the repulse reaches
   const REPULSE_FORCE   = 2.8;  // strength multiplier
   const RETURN_EASE     = 0.12; // how quickly particles drift back (0–1)
-  const COUNT           = 4000;
+  const COUNT           = 2000;
 
   function resize() {
     W = canvas.width  = section.offsetWidth;
