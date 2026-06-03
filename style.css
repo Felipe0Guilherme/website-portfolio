@@ -38,6 +38,20 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
 
+/* ===== SLOW THEME TRANSITION ===== */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 1s cubic-bezier(0.4, 0, 0.2, 1),
+    color 4.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 4.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 4.5s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 4.5s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 4.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
 /* ===== SCROLL PROGRESS ===== */
 .scroll-progress {
   position: fixed; top: 0; left: 0; height: 2px; width: 0;
@@ -103,9 +117,40 @@ nav.nav { display: flex; gap: 0; margin-left: auto; }
   background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
   width: 36px; height: 36px; cursor: pointer; color: rgba(255,255,255,0.8);
   display: flex; align-items: center; justify-content: center;
-  transition: all .2s; flex-shrink: 0;
+  transition: color .2s, border-color .2s, background .2s, transform .2s; flex-shrink: 0;
+  position: relative; overflow: hidden;
 }
 .theme-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.12); }
+.theme-toggle:active { transform: scale(0.9); }
+
+/* Ripple effect on click */
+.theme-toggle::after {
+  content: '';
+  position: absolute; inset: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0s, opacity 0.6s;
+  opacity: 0;
+}
+.theme-toggle.rippling::after {
+  transform: translate(-50%, -50%) scale(3);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Icon spin during transition */
+.theme-toggle.transitioning i,
+.theme-toggle.transitioning svg {
+  animation: theme-icon-spin 1s linear;
+}
+@keyframes theme-icon-spin {
+  0%   { transform: rotate(0deg)   scale(1);   opacity: 1; }
+  10%  { transform: rotate(180deg) scale(0.5); opacity: 0; }
+  15%  { transform: rotate(180deg) scale(0.5); opacity: 0; }
+  25%  { transform: rotate(360deg) scale(1);   opacity: 1; }
+  100% { transform: rotate(360deg) scale(1);   opacity: 1; }
+}
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--text2); border-radius: 2px; transition: all .3s; }
 
@@ -150,17 +195,7 @@ nav.nav { display: flex; gap: 0; margin-left: auto; }
 .hero-content {
   position: relative; z-index: 3; max-width: 760px; width: 100%; text-align: center;
 }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  padding: 0.35rem 1.1rem; border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
-  font-size: 0.8rem; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 1.75rem;
-  animation: fadeUp .9s cubic-bezier(.25,.4,.25,1) .3s both;
-}
-.badge-dot {
-  width: 7px; height: 7px; border-radius: 50%; background: rgba(244,63,94,0.9);
-  flex-shrink: 0; animation: pulse-dot 2s infinite;
-}
+ 
 @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
 
 .hero-title {
@@ -765,7 +800,7 @@ nav.nav { display: flex; gap: 0; margin-left: auto; }
     align-items: center;
   }
   .hero-content { max-width: 100%; }
-  .hero-badge { margin: 0 auto 1.25rem; }
+
   .hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem); }
   .hero-desc { margin: 0 auto 2rem; font-size: 0.92rem; }
   .hero-actions { justify-content: center; flex-wrap: wrap; gap: 0.75rem; }
@@ -989,7 +1024,6 @@ nav.nav { display: flex; gap: 0; margin-left: auto; }
 /* --- Very small screens (≤360px) --- */
 @media (max-width: 360px) {
   .hero-title { font-size: 2.2rem; }
-  .hero-badge { font-size: 0.72rem; }
   .hero-stats { flex-direction: column; align-items: center; gap: 0.75rem; }
   .stat-sep { width: 40px; height: 1px; }
   .section-title { font-size: 1.4rem; }

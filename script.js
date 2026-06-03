@@ -1,18 +1,42 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Theme toggle
+  // Theme toggle — transição lenta (~4.5s)
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   const saved = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', saved);
   updateIcon(saved);
+
   themeToggle.addEventListener('click', () => {
+    if (html.classList.contains('theme-transitioning')) return; // ignora clique durante transição
+
     const cur = html.getAttribute('data-theme');
     const nxt = cur === 'dark' ? 'light' : 'dark';
+
+    // Ripple visual no botão
+    themeToggle.classList.remove('rippling');
+    void themeToggle.offsetWidth; // força reflow
+    themeToggle.classList.add('rippling');
+
+    // Ativa transição lenta
+    html.classList.add('theme-transitioning');
+    themeToggle.classList.add('transitioning');
+
+    // Troca o tema
     html.setAttribute('data-theme', nxt);
     localStorage.setItem('theme', nxt);
-    updateIcon(nxt);
+
+    // Atualiza ícone no meio da animação (após 0.6s, quando ele some)
+    setTimeout(() => updateIcon(nxt), 600);
+
+    // Remove classes de transição após completar
+    const DURATION = 1000;
+    setTimeout(() => {
+      html.classList.remove('theme-transitioning');
+      themeToggle.classList.remove('transitioning', 'rippling');
+    }, DURATION);
   });
+
   function updateIcon(t) {
     themeToggle.innerHTML = t === 'dark'
       ? '<i data-lucide="sun"></i>'
@@ -239,23 +263,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', updatePositions);
 
-  // Contact form
+  // Contact form — Formspree
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       status.className = 'form-status';
+      status.textContent = '';
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.querySelector('span').textContent = 'Enviando...';
-      setTimeout(() => {
+
+      // Honeypot bot check
+      if (form.querySelector('[name="_honey"]') && form.querySelector('[name="_honey"]').value) {
         btn.disabled = false;
         btn.querySelector('span').textContent = 'Enviar Mensagem';
-        status.textContent = '✓ Mensagem enviada com sucesso! Entrarei em contato em breve.';
-        status.classList.add('success');
-        form.reset();
-      }, 1500);
+        return;
+      }
+
+      try {
+        const res = await fetch('https://formspree.io/f/mvzynplk', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.textContent = '✓ Mensagem enviada! Entrarei em contato em breve.';
+          status.classList.add('success');
+          form.reset();
+        } else {
+          const json = await res.json();
+          const msg = json.errors ? json.errors.map(er => er.message).join(', ') : 'Erro ao enviar.';
+          status.textContent = '✗ ' + msg;
+          status.classList.add('error');
+        }
+      } catch (err) {
+        status.textContent = '✗ Sem conexão. Tente novamente ou me contate pelo email.';
+        status.classList.add('error');
+      }
+
+      btn.disabled = false;
+      btn.querySelector('span').textContent = 'Enviar Mensagem';
     });
   }
 
